@@ -1,0 +1,61 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "control1",
+					"strict" : false
+				},
+				{
+					"name" : "control2",
+					"strict" : false
+				},
+				{
+					"name" : "control3",
+					"strict" : false
+				},
+				{
+					"name" : "MOT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MOT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MOT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MOT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "UDmotpasos",
+					"strict" : false
+				},
+				{
+					"name" : "stmotpasos",
+					"strict" : false
+				},
+				{
+					"name" : "servo1",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "servo2",
+					"strict" : false
+				},
+				{
+					"name" : "servo3",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

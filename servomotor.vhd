@@ -1,0 +1,106 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity servomotor is 
+port (
+	clk: in std_logic;
+	servo1,servo2,servo3: in std_logic;
+	control1,control2,control3: out std_logic;     --Salida a servomotores
+	UDmotpasos : in std_logic;        --Es el encargado de hacer cambio de direccion.
+	stmotpasos : in std_logic;        --Inicio pausa de mociento del motor a pasos.
+	MOT : out std_logic_vector(3 downto 0)
+);
+end servomotor;
+
+architecture behavioral of servomotor is
+	component divisor is
+	port (
+		clk: in std_logic;
+		div_clk: out std_logic
+	);
+	end component;
+	
+	component pwm is
+	port (
+		reloj: in std_logic;
+		d: in std_logic_vector(15 downto 0);
+		s: out std_logic
+	);	
+	end component;
+	
+	signal reloj: std_logic;
+	signal ancho, ancho2, ancho3: std_logic_vector(15 downto 0):= X"0CCE";	
+	
+begin
+
+	um: entity work.motpasos(behavioral) port map (clk, udmotpasos, stmotpasos,mot);
+
+   --INSTANCIAS A UTILIZAR
+	u1: divisor port map (clk, reloj);
+	u2: pwm port map (reloj, ancho, control1);
+	u3: pwm port map (reloj, ancho2, control2);
+	u4: pwm port map (reloj, ancho3, control3);
+	
+	process(reloj,servo1)            --Proceso para controlar el primer servomotor
+		variable valor: std_logic_vector(15 downto 0):= X"0CCE";
+		variable cuenta: integer range 0 to 1023;
+	
+	begin
+		if reloj = '1' and reloj' event then
+			if cuenta > 0 then 
+				cuenta := cuenta - 1;
+			else
+				if servo1 = '1' then
+					valor := X"0CCD";               --Punto Inicial   (0°)
+				elsif servo1 = '0' then
+					valor := X"199A";               --Punto Final   (90°)
+				end if;
+				cuenta := 1023;
+				ancho <= valor;
+			end if;
+		end if;	
+	end process;	
+	
+	process(reloj,servo2)            --Proceso para controlar el segundo servomotor
+	variable valor2: std_logic_vector(15 downto 0):= X"0CCE";
+	variable cuenta2: integer range 0 to 1023;
+	
+	begin
+		if reloj = '1' and reloj' event then
+			if cuenta2 > 0 then 
+				cuenta2 := cuenta2 - 1;
+			else
+				if servo2 = '1' then
+					valor2 := X"0CCD";               --Punto Inicial (0°)
+				elsif servo2 = '0' then
+					valor2 := X"199A";               --Punto Final   (90°)
+				end if;
+				cuenta2 := 1023;
+				ancho2 <= valor2;
+			end if;
+		end if;	
+	end process;	
+	
+	process(reloj,servo3)            --Proceso para controlar el tercer servomotor (Pinza)
+	variable valor3: std_logic_vector(15 downto 0):= X"0CCE";
+	variable cuenta3: integer range 0 to 1023;
+	
+	begin
+		if reloj = '1' and reloj' event then
+			if cuenta3 > 0 then 
+				cuenta3 := cuenta3 - 1;
+			else
+				if servo3 = '1' then
+					valor3 := X"0CCD";               --Punto inicial (45°)
+				elsif servo3 = '0' then             
+					valor3 := X"0666";               --Punto Final   (90°)
+				end if;
+				cuenta3 := 1023;
+				ancho3 <= valor3;
+			end if;
+		end if;	
+	end process;	
+	
+end behavioral;

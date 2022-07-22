@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'divisor:u1|cuenta[3]'
+Slack : -3.797
+TNS   : -59.494
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -2.078
+TNS   : -23.256
+
+Type  : Slow 1200mV 85C Model Setup 'motpasos:um|div[17]'
+Slack : -0.591
+TNS   : -1.217
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.363
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'divisor:u1|cuenta[3]'
+Slack : 0.418
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'motpasos:um|div[17]'
+Slack : 0.441
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -33.866
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor:u1|cuenta[3]'
+Slack : -1.403
+TNS   : -49.105
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'motpasos:um|div[17]'
+Slack : -1.403
+TNS   : -7.015
+
+Type  : Slow 1200mV 0C Model Setup 'divisor:u1|cuenta[3]'
+Slack : -3.384
+TNS   : -51.514
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -1.769
+TNS   : -19.041
+
+Type  : Slow 1200mV 0C Model Setup 'motpasos:um|div[17]'
+Slack : -0.459
+TNS   : -0.825
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.327
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'divisor:u1|cuenta[3]'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'motpasos:um|div[17]'
+Slack : 0.410
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -33.866
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor:u1|cuenta[3]'
+Slack : -1.403
+TNS   : -49.105
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'motpasos:um|div[17]'
+Slack : -1.403
+TNS   : -7.015
+
+Type  : Fast 1200mV 0C Model Setup 'divisor:u1|cuenta[3]'
+Slack : -0.983
+TNS   : -6.252
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.852
+TNS   : -1.667
+
+Type  : Fast 1200mV 0C Model Setup 'motpasos:um|div[17]'
+Slack : 0.340
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.156
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'divisor:u1|cuenta[3]'
+Slack : 0.167
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'motpasos:um|div[17]'
+Slack : 0.168
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -25.629
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor:u1|cuenta[3]'
+Slack : -1.000
+TNS   : -35.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'motpasos:um|div[17]'
+Slack : -1.000
+TNS   : -5.000
+
+------------------------------------------------------------
